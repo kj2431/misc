@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+        <title>Stock Price Predictor</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Stock Price Predictor</a>
+            </div>
+          </div>
+        </nav>
+    </body>
+    <div align="center">
+    <body>
+        <h2>The last day's ({{today_date}}) closing price for {{stock}} is: {{last_y}}</h2>
+        <br>
+        <h3>Using the RNN model:</h3>
+        <br>
+        <p>The next day prediction is: {{y_plus_1}}</p>
+        <p>Recommendation: {{rec_1}}</p>
+        <br>
+        <br>
+        <p>The 5-day prediction is: {{y_plus_5}}</p>
+        <p>Recommendation: {{rec_5}}</p>
+        <br>
+        <br>
+    </body>
+    	<br>
+
+    <body>
+        <h4>Using the ARIMA model for 10 day prediction:</h4>
+        <p>{{predict_10}}</p>
+        <p>Recommendation: {{rec_10}}</p>
+    </body>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <footer>
+    <a href="http://kj2431.pythonanywhere.com/">Click Here to Return</a>
+</footer>
