@@ -201,36 +201,10 @@ def index_post():
         else:
             rec5 = 'Sell'
 
-        #ARIMA
-        series = y
-        # seasonal difference
-        X3 = series.values
-        days_in_year = 52
-        differenced = difference(X3, days_in_year)
-        # fit model
-        model = ARIMA(differenced, order=(3,1,2))
-        model_fit = model.fit(disp=0)
-        future_steps = 10
-        # multistep future forecast
-        forecast = model_fit.forecast(steps=future_steps)[0]
-        # invert the differenced forecast to something usable
-        y_predict_10 = [x for x in X3]
-        day = 1
-        for yhat in forecast:
-            inverted = inverse_difference(y_predict_10, yhat, days_in_year)
-            y_predict_10.append(inverted)
-            day += 1
-        y_predict_10 = np.array(y_predict_10)
-        y_predict_scaled_10 = y_predict_10[-1]*(y_max-y_min)+y_min
-        if y_predict_scaled_10 > y_1:
-            rec10 = 'Buy'
-        else:
-            rec10 = 'Sell'
-
         today_date = datetime.now(timezone('US/Eastern')).strftime("%Y-%m-%d")
         return render_template("price_predict.html", stock=stock, y_plus_1=round(np.float(y_predict_scaled_1),2),
                                y_plus_5=round(np.float(y_predict_scaled_5),2),
                                last_y=round(y_1,2),today_date=today_date, rec_1=rec1,
-                               rec_5=rec5, predict_10=round(np.float(y_predict_scaled_10),2), rec_10=rec10)
+                               rec_5=rec5)
     else:
         return render_template("main_page.html")
