@@ -1,2 +1,2 @@
 # 
-Miscellaneous code files to share
+Miscellaneous code files to share as work samples
